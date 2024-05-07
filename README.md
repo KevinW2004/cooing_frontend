@@ -1,10 +1,6 @@
 # cooing_frontend
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+“声自远”AI口语教育平台-前端代码
 
 ## Type Support for `.vue` Imports in TS
 
