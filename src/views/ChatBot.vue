@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import {Microphone, Mute} from "@element-plus/icons-vue";
 import {ref} from "vue";
+import mascot_breathe from "@/assets/mascot/呼吸.mp4"
 const isRecording = ref(false);
 const mediaRecorder = ref<MediaRecorder | null>(null);
 const audioChunks: Blob[] = [];
 const audio = ref<HTMLAudioElement | null>(null)
+let videoSource = ref(mascot_breathe);
 
 const startRecording = async () => {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -51,6 +53,12 @@ const uploadAudio = async (audioBlob: Blob) => {
 <template>
   <div class="overall">
     <h1>Cooing Chat Bot</h1>
+    <div class="mascot-container">
+      <video width="320" height="240" controls>
+      <source :src="videoSource" type="video/mp4">
+      您的浏览器不支持 HTML5 视频。
+      </video>
+    </div>
     <div class="recorder-button-container">
       <el-button size="large" v-if="!isRecording" type="primary" @click="startRecording"><el-icon><Microphone /></el-icon></el-button>
       <el-button size="large" v-else type="primary" @click="stopRecording"><el-icon><Mute /></el-icon></el-button>
