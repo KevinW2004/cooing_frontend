@@ -29,6 +29,9 @@ onBeforeRouteUpdate((to) => {
       <el-icon v-if="isCollapse"><Expand/></el-icon>
       <el-icon v-else><Fold/></el-icon>
     </el-button>
+      <template #title>
+        <span>菜单</span>
+      </template>
     </el-menu-item>
     <el-menu-item index="/chatBot">
       <el-icon>

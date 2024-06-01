@@ -1,0 +1,99 @@
+/* 设置网页字体和背景颜色 */
+body {
+    font-family: Arial, sans-serif;   /* 设置字体为Arial或者sans-serif */
+    background-color: #f8f9fa;      /* 设置背景颜色为浅灰色 */
+    position: relative;     /* 设置定位为相对定位 */
+    min-height: 100vh;      /* 设置最小高度为视口高度 */
+    margin: 0;              /* 设置外边距为0，消除默认外边距 */
+    /*font-size: 2px;        /* 设置字体大小*/
+}
+
+.navbar-brand {
+    font-size: 28px;            /* 设置字体大小为24像素 */
+    font-family: Arial, sans-serif; /* 设置字体为Arial或者sans-serif */
+    font-weight: bold;          /* 设置字体加粗 */
+}
+
+
+/* 背景图片设置 */
+.background {
+    position: fixed;/* 设置定位为固定定位，使背景图片固定在页面上 */
+    top: 0;         /* 背景图片顶部与页面顶部对齐 */
+    left: 0;        /* 背景图片左侧与页面左侧对齐 */
+    width: 100%;    /* 设置宽度为100% */
+    height: 100%;   /* 设置高度为100% */
+    background-image: url('../images/background.jpg'); /* 背景图片路径 */
+    background-size: cover;     /* 设置背景图片填充整个容器 */
+    background-position: center;/* 设置背景图片居中显示 */
+    z-index: -1;    /* 将背景图片置于最底层 */
+    opacity: 0.5;   /* 设置背景图片透明度为0.5 */
+}
+
+/* 聊天容器样式 */
+.chat-container {
+    max-width: 620px;       /* 设置最大宽度为620像素 */
+    margin: 0 auto;         /* 设置左右外边距自动，使容器水平居中 */
+    background: white;    /* 设置背景色为白色 */
+    padding: 20px;          /* 设置内边距为20像素 */
+    border-radius: 8px;     /* 设置边框圆角为8像素 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* 设置阴影效果 */
+    display: flex;          /* 设置为flex布局 */
+    flex-direction: column; /* 设置主轴方向为垂直 */
+    height: calc(100vh - 110px); /* 计算高度为视口高度减去100像素 */
+}
+
+/* 聊天框样式 */
+.chat-box {
+    flex: 1;              /* 设置弹性增长，使聊天框占据剩余空间 */
+    overflow-y: auto;       /* 设置垂直溢出时显示滚动条 */
+    padding: 10px;          /* 设置内边距为10像素 */
+    border: 1px solid #ddd;   /* 设置边框为1像素灰色实线 */
+    border-radius: 4px;         /* 设置边框圆角 */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/chat-bg.jpg');
+    background-size: cover;     /* 设置背景图片填充整个容器 */
+    background-position: center; /* 设置背景图片居中显示 */
+    margin-bottom: 20px;    /* 设置下外边距 */
+    word-wrap: break-word;  /* 设置文字自动换行 */
+    display: flex;          /* 设置为flex布局 */
+    flex-direction: column; /* 设置主轴方向为垂直 */
+}
+
+/* 消息气泡样式 */
+.message {
+    padding: 10px;          /* 设置内边距为10像素 */
+    border-radius: 15px;    /* 设置边框圆角为15像素 */
+    margin-bottom: 10px;    /* 设置下外边距为10像素 */
+    max-width: 75%;         /* 设置最大宽度为75% */
+    word-wrap: break-word;  /* 设置文字自动换行 */
+    display: inline-block;  /* 设置为行内块元素 */
+}
+
+.user-message {
+    background: #ffcfe1;  /* 设置背景色 */
+    color: black;         /* 设置文字颜色*/
+    align-self: flex-end;   /* 设置在flex容器中靠右对齐 */
+    border-bottom-right-radius: 0; /* 设置右下角边框圆角为0 */
+    margin-right: 0;        /* 设置右外边距为0，紧贴右边 */
+}
+
+.bot-response {
+    background: #e4e6e8;  /* 设置背景色 */
+    color: black;         /* 设置文字颜色为黑色 */
+    align-self: flex-start; /* 设置在flex容器中靠左对齐 */
+    border-bottom-left-radius: 0; /* 设置左下角边框圆角为0 */
+    margin-left: 0;         /* 设置左外边距为0，紧贴左边 */
+}
+
+/* 输入条固定在底部 */
+.input-group.fixed-bottom {
+    position: fixed;        /* 设置定位为固定定位 */
+    bottom: 0;              /* 设置底部与页面底部对齐 */
+    left: 50%;              /* 设置左侧与页面左侧距离 */
+    transform: translateX(-50%); /* 水平居中 */
+    width: 700px;           /* 设置宽度为600像素 */
+    z-index: 1000;          /* 设置层级为1000 */
+    background: white;    /* 设置背景色 */
+    padding: 10px;          /* 设置内边距 */
+    border-radius: 8px;     /* 设置边框圆角 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 设置底部阴影效果 */
+}

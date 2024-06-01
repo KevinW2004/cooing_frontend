@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脑洞海龟汤</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- 背景图片 -->
+    <div class="background"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">脑洞海龟汤</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">网页介绍</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutGame">游戏简介</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutUs">开发团队</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <div class="container mt-4">
+        <div class="chat-container">
+            <div id="chat-box" class="chat-box">
+                <!-- 对话内容将显示在这里 -->
+            </div>
+            <div class="input-group fixed-bottom mb-3 px-3">
+                <input type="text" id="user-input" class="form-control" placeholder="请输入..." disabled>
+                <div class="input-group-append">
+                    <button id="send-btn" class="btn btn-primary" disabled>发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 网页介绍模态框 -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">网页介绍</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        哇啦哇啦啦啦啦这是一个网页啦啦啦 
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 游戏简介模态框 -->
+    <div class="modal fade" id="aboutGame" tabindex="-1" role="dialog" aria-labelledby="aboutGameLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutGameLabel">游戏简介</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        海龟汤游戏是一种猜测情境型事件真相的智力游戏。其玩法是由出题者提出一个难以理解的事件，
+                        参与猜题者可以提出任何问题以试图缩小范围并找出事件背后真正的原因，
+                        但出题者仅能以“是”、“不是”或“无关”来回答问题。
+                        以下是一个海龟汤游戏的小例子，希望能够帮助您快速上手游戏：
+                        <br>--------------------------------------------------------------------------------------
+                        <br>问题：一个男人走进一家酒吧，并向酒保要了一杯水。酒保却突然拿出一把手枪瞄准他，而男子竟只是笑着说：“谢谢你！”然后从容离开，请问发生了什么事？
+                        <br>------------------猜题者与出题者的问、答过程可能如下------------------
+                        <br>问：酒保听得到他说的话吗？ 答：是
+                        <br>问：酒保是为某些事情生气吗？ 答：不是
+                        <br>问：这支枪是水枪吗？ 答：不是
+                        <br>问：他们原本就互相认识吗？ 答：毫无关系
+                        <br>问：这个男人说“谢谢你”时带有讽刺的口气吗？ 答：没有
+                        <br>问：酒保认为男子对自己构成威胁吗？ 答：没有
+                        <br>--------------------一番问答之后，可能会导引出答案---------------------
+                        <br>该名男子打嗝，他希望喝一杯水来改善状况。酒保意识到这一点，选择拿枪吓他，男子一紧张之下，打嗝自然消失，因而衷心感谢酒保后就离开了。
+                        
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 开发团队模态框 -->
+    <div class="modal fade" id="aboutUs" tabindex="-1" role="dialog" aria-labelledby="aboutUsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutUsLabel">开发团队</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        我们的团队由三名不同年级的同学组成：
+                        <br>陈心怡：团队负责人，南京大学匡亚明学院脑科学与人工智能专业大一生。
+                        <br>朱睿骐：团队成员，南京大学匡亚明学院脑科学与人工智能专业大三生。
+                        <br>ITO CHOH ：团队成员，南京大学新闻与传播学院广告学专业大二日本留学生。
+                        
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 启用输入框和按钮
+            $('#user-input').prop('disabled', false);
+            $('#send-btn').prop('disabled', false);
+
+            $('#send-btn').on('click', function() {
+                let userInput = $('#user-input').val();
+                if (userInput.trim() !== '') {
+                    $('#chat-box').append('<div class="message user-message">' + userInput + '</div>');
+                    $('#user-input').val('');
+                    $('#user-input').prop('disabled', true);
+                    $('#send-btn').prop('disabled', true);
+
+                    $.ajax({
+                        url: '/chat',
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ message: userInput }),
+                        success: function(response) {
+                            $('#chat-box').append('<div class="message bot-response">' + response.response + '</div>');
+                            $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight); // 滚动到最新消息
+                            $('#user-input').prop('disabled', false);
+                            $('#send-btn').prop('disabled', false);
+                        },
+                        error: function() {
+                            $('#chat-box').append('<div class="message bot-response">There was an error processing your request.</div>');
+                            $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight); // 滚动到最新消息
+                            $('#user-input').prop('disabled', false);
+                            $('#send-btn').prop('disabled', false);
+                        }
+                    });
+                }
+            });
+
+            // 使用 Enter 键发送消息
+            $('#user-input').on('keypress', function(e) {
+                if (e.which == 13) {
+                    $('#send-btn').click();
+                    return false; // 防止表单提交
+                }
+            });
+        });
+    </script>
+</body>
+</html>
